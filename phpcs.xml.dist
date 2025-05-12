@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset>
+	<config name="installed_paths" value="vendor/vojtech-dobes/php-codestyle" />
+
+	<file>src</file>
+	<file>tests</file>
+
+	<rule ref="Vojtechdobes" />
+
+	<rule ref="SlevomatCodingStandard.Namespaces.UseOnlyWhitelistedNamespaces">
+		<properties>
+			<property name="allowUseFromRootNamespace" value="true" />
+			<property name="namespacesRequiredToUse" type="array">
+				<element value="Kappezette" />
+			</property>
+		</properties>
+	</rule>
+</ruleset>

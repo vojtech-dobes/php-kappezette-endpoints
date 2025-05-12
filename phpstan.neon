@@ -1,0 +1,35 @@
+includes:
+  - phpstan-baseline.neon
+  - vendor/phpstan/phpstan-strict-rules/rules.neon
+  - vendor/spaze/phpstan-disallowed-calls/extension.neon
+
+parameters:
+  checkMissingCallableSignature: true
+  disallowedFunctionCalls:
+    - function:
+        - 'dump()'
+        - 'var_dump()'
+      message: 'avoid committing debug calls'
+
+  earlyTerminatingMethodCalls:
+    Tester\Assert:
+      - fail
+
+  exceptions:
+    check:
+      missingCheckedExceptionInThrows: true
+      tooWideThrowType: true
+
+    uncheckedExceptionClasses:
+      - Error
+      - LogicException
+      - ReflectionException
+
+  level: 8
+
+  paths:
+    - src
+    - tests
+
+  strictRules:
+    disallowedShortTernary: false

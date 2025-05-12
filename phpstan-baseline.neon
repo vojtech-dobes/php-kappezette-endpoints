@@ -1,0 +1,25 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Trait Kappezette\\Integrations\\NetteSchema\\VerifiedBody is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: src/Kappezette/Integrations/NetteSchema/VerifiedBody.php
+
+		-
+			message: '#^Trait Kappezette\\Integrations\\NetteSchema\\VerifiedParams is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: src/Kappezette/Integrations/NetteSchema/VerifiedParams.php
+
+		-
+			message: '#^Trait Kappezette\\Integrations\\VojtechdobesConformance\\VerifiedBody is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: src/Kappezette/Integrations/VojtechdobesConformance/VerifiedBody.php
+
+		-
+			message: '#^Trait Kappezette\\Integrations\\VojtechdobesConformance\\VerifiedParams is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: src/Kappezette/Integrations/VojtechdobesConformance/VerifiedParams.php

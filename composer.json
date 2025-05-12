@@ -1,0 +1,57 @@
+{
+	"authors": [
+		{
+			"name": "Vojtěch Dobeš",
+			"homepage": "https://vojtechdobes.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Kappezette\\": "src/Kappezette"
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": false
+		},
+		"sort-packages": true
+	},
+	"keywords": [
+		"api",
+		"nette",
+		"rest"
+	],
+	"license": [
+		"BSD-3-Clause"
+	],
+	"name": "vojtech-dobes/kappezette-endpoints",
+	"repositories": [
+		{
+			"type": "path",
+			"url": "../php-conformance"
+		}
+	],
+	"require": {
+		"php": "~8.4",
+		"nette/application": "^3.0",
+		"nette/http": "^3.0",
+		"nette/utils": "^4.0",
+		"vojtech-dobes/php-conformance": "@dev"
+	},
+	"require-dev": {
+		"nette/di": "^3.0",
+		"nette/tester": "^2.5.4",
+		"php-parallel-lint/php-parallel-lint": "^1.4.0",
+		"phpstan/phpstan": "^2.1.12",
+		"phpstan/phpstan-strict-rules": "^2.0.4",
+		"psr/log": "^3.0",
+		"spaze/phpstan-disallowed-calls": "^4.5.0",
+		"tracy/tracy": "^2.10.9",
+		"vojtech-dobes/php-codestyle": "~0.2.0"
+	},
+	"scripts": {
+		"lint": "parallel-lint src tests",
+		"phpstan": "phpstan analyse --memory-limit 256M",
+		"test": "composer dump-autoload && tester tests -o console-lines --cider --setup=tests/setup.php -C"
+	}
+}
